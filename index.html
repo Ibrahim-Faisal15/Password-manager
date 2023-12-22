@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PassX | Your Personal Password Manager</title>
+    <title>PassSave | Your Personal Password Manager</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <nav>
-            <span id="logo">PassX</span>
+            <span id="logo">PassSave</span>
             <ul>
                 <li><a href="">Home</a></li>
                 <li><a href="">About</a></li>
@@ -18,10 +20,62 @@
         </nav>
     </header>
     <main>
-        main
+
+        <div class="input_field">
+            <form>
+                <h1>Enter Password</h1>
+                <!-- Text input for username -->
+                <label for="username">Email/Name: </label>
+                <br>
+                <input type="text" id="username" required>
+                <br>
+                <!-- Password input -->
+                <label for="password">Password:</label>
+                <br>
+                <input type="text" id="password" required>
+                <br>
+                <label>Website:</label>
+                <br>
+                <input type="text" id="website" required>
+                <br>
+                <!-- Submit button -->
+                <input type="submit" value="Submit" id="submit">
+            </form>
+        </div>
+        <div class="passwords">
+            <h1>Saved Passwords</h1>
+            <table>
+                <thead>
+
+                    <th>Email/Name</th>
+                    <th>Password</th>
+                    <th>Website</th>
+                    <th class="delete">Delete</th>
+
+                </thead>
+
+                <tbody>
+                    <!-- <tr>
+                    <td>d</td>
+                    <td>d</td>
+                    <td>d</td>
+                   </tr> -->
+                </tbody>
+
+
+            </table>
+
+        </div>
+
+
     </main>
     <footer>
-        Copyright | PassX.com | All Rights reserved
+        Copyright | PassSave.com | All Rights reserved
     </footer>
 </body>
+<script src="script.js"></script>
+
 </html>
+
+
+
