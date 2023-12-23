@@ -10,7 +10,6 @@ let username_data = document.createElement("td");
 let password_data = document.createElement("td");
 let website_data = document.createElement("td");
 
-
 password_data.addEventListener("click", (event) => {
   navigator.clipboard.writeText(event.target.textContent);
   alert("Copied the text: " + event.target.textContent);
