@@ -4,8 +4,30 @@ let website = document.querySelector("#website");
 let submit = document.querySelector("#submit");
 let delete_row = document.createElement("img");
 
+let password_history = document.querySelector("tbody");
+let table_row = document.createElement("tr");
+let username_data = document.createElement("td");
+let password_data = document.createElement("td");
+let website_data = document.createElement("td");
 
 
+password_data.addEventListener("click", (event) => {
+  navigator.clipboard.writeText(event.target.textContent);
+  alert("Copied the text: " + event.target.textContent);
+  console.log(2224);
+});
+
+username_data.addEventListener("click", (event) => {
+  navigator.clipboard.writeText(event.target.textContent);
+  // alert("Copied the text: " + event.target.textContent);
+  console.log(2224);
+});
+
+website_data.addEventListener("click", (event) => {
+  navigator.clipboard.writeText(event.target.textContent);
+  // alert("Copied the text: " + event.target.textContent);
+  console.log(2224);
+});
 
 submit.addEventListener("click", (event) => {
   event.preventDefault();
@@ -38,17 +60,22 @@ submit.addEventListener("click", (event) => {
     localStorage.setItem("pass_data", JSON.stringify(json));
   }
 
-  let password_history = document.querySelector("tbody");
-  let table_row = document.createElement("tr");
-  let username_data = document.createElement("td");
-  let password_data = document.createElement("td");
-  let website_data = document.createElement("td");
+  // let password_history = document.querySelector("tbody");
+  // let table_row = document.createElement("tr");
+  // let username_data = document.createElement("td");
+  // let password_data = document.createElement("td");
+  // let website_data = document.createElement("td");
   delete_row.src = "trash.svg";
   delete_row.style.aspectRatio = 1 / 1;
   delete_row.style.height = "20px";
   delete_row.style.position = "relative";
   delete_row.style.left = "18px";
   delete_row.style.top = "5px";
+  delete_row.style.cursor = "pointer";
+
+  username_data.style.cursor = "pointer";
+  password_data.style.cursor = "pointer";
+  website_data.style.cursor = "pointer";
 
   username_data.textContent = username.value; // Use textContent to set the value
   password_data.textContent = password.value; // Use textContent to set the value
@@ -85,6 +112,11 @@ window.addEventListener("load", (event) => {
       delete_row.style.position = "relative";
       delete_row.style.left = "18px";
       delete_row.style.top = "10px";
+      delete_row.style.cursor = "pointer";
+
+      username_data.style.cursor = "pointer";
+      password_data.style.cursor = "pointer";
+      website_data.style.cursor = "pointer";
 
       username_data.textContent = item.username;
       password_data.textContent = item.password;
@@ -96,6 +128,5 @@ window.addEventListener("load", (event) => {
       table_row.appendChild(website_data);
       table_row.appendChild(delete_row);
     }
-
   }
 });
