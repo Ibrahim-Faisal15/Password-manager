@@ -143,9 +143,14 @@ window.addEventListener("load", (event) => {
       password_data.textContent = item.password;
       website_data.textContent = item.website;
 
-    delete_row.addEventListener("click", function () {
-      this.parentNode.parentNode.removeChild(this.parentNode);
-    });
+  delete_row.addEventListener("click", function () {
+
+    this.parentNode.parentNode.removeChild(this.parentNode);
+
+    // Remove the corresponding data from local storage
+    json = json.filter((data) => data.username !== item.username);
+    localStorage.setItem("pass_data", JSON.stringify(json));
+  });
 
       password_history.appendChild(table_row);
       table_row.appendChild(username_data);
